@@ -493,6 +493,7 @@ module Databasedotcom
     def coerced_json(attrs, clazz)
       if attrs.is_a?(Hash)
         coerced_attrs = {}
+        attrs.delete_if { |k, v| v === nil }
         attrs.keys.each do |key|
           case clazz.field_type(key)
             when "multipicklist"
