@@ -384,6 +384,7 @@ module Databasedotcom
         http.use_ssl = true 
         http.ca_file = self.ca_file if self.ca_file
         http.verify_mode = self.verify_mode if self.verify_mode
+        http.ssl_version = :TLSv1_2
       end
     end
 
